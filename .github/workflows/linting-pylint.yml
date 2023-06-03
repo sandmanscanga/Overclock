@@ -6,6 +6,13 @@ on:
       - main
       - develop
       - 'feature/**'
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+    branches-ignore:
+      - 'dependabot/**'
 
 permissions:
   contents: read

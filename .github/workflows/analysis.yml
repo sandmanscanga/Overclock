@@ -1,6 +1,11 @@
 name: Code Analysis
 
 on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
   push:
     branches:
       - main
@@ -8,11 +13,6 @@ on:
       - 'feature/**'
     branches-ignore:
       - 'dependabot/**'
-  pull_request:
-    branches:
-      - main
-      - develop
-      - 'feature/**'
 
 jobs:
   analyze:
