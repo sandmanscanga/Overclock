@@ -1,11 +1,6 @@
 name: Linting - pylint
 
 on:
-  push:
-    branches:
-      - main
-      - develop
-      - 'feature/**'
   pull_request:
     branches:
       - main
