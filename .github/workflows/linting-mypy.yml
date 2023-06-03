@@ -1,4 +1,4 @@
-name: Linting - flake8
+name: Linting - mypy
 
 on:
   push:
@@ -16,8 +16,8 @@ permissions:
   contents: read
 
 jobs:
-  linter-flake8:
-    name: Linter - flake8
+  linter-pylint:
+    name: Linter - mypy
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +35,7 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           fi
-          pip install flake8
+          pip install mypy
 
-      - name: Lint with flake8
-        run: |
-          flake8 . --count --max-complexity=10 --max-line-length=127 --show-source --statistics
+      - name: Lint with mypy
+        run: mypy --pretty --strict .
