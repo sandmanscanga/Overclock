@@ -5,7 +5,7 @@ def subtract(a, b):
     return a - b
 
 def divide(a, b):
-	return a / b
+    return a / b
 
 
 from bs4 import BeautifulSoup
@@ -14,20 +14,20 @@ import requests
 def get_anchors(url):
 
 
-	response = requests.get(url)
-	soup = BeautifulSoup(response.text, "lxml")
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "lxml")
 
-	stuff = []
+    stuff = []
 
-	anchors = []
-	for anchor in soup.findAll("a"):
-		anchors.append(anchor.attrs["href"])
+    anchors = []
+    for anchor in soup.findAll("a"):
+        anchors.append(anchor.attrs["href"])
 
 
-	string = "hi"
-	return anchors
+    string = "hi"
+    return anchors
 if __name__ == "__main__":
-	anchors = get_anchors("https://www.google.com/")
-	print(anchors)
+    anchors = get_anchors("https://www.google.com/")
+    print(anchors)
 
 # This file is purposely cringe, I want to test the workflows.
